@@ -5,22 +5,48 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+<div class="main-container">
+  <div class="container">
+    <ul class="navbar-nav mx-auto">
+    <!--<router-link to="/">Home</router-link>
+    <router-link to="/about">About</router-link>-->
+    <router-link to="/">Shop</router-link>
+    </ul>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+ 
+   <router-view></router-view>
+   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
+}
+.main-container{
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+.navbar-nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  background: #f2f2f2;
+  a{
+    display: block;
+    padding: 10px 15px;
+    border: 1px solid #000;
+    color: #000;
+    &:hover{
+      background: #000;
+      color: #fff;
+    }
+  }
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
